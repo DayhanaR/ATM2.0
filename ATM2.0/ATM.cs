@@ -58,13 +58,12 @@ namespace ATM2._0
         public void Menu(Bank bank, int idUser)
         {
             int answer = 0;
+            int transactionCounter = 1;
 
             do
             {
                 try
                 {
-                    int transactionCounter = 1;
-
                     Console.WriteLine($"\nBienvenid@ {bank.GetUser(idUser).Name}" +
                                       $"\n" +
                                       $"\n================================" +
@@ -100,10 +99,10 @@ namespace ATM2._0
                                                   $"\n|-------------------------------|" +
                                                   $"\n\tNuevo saldo: {bank.GetAccount(accountOption1).Balance} ");
 
-                                string transaction = ($"Ingreso de dinero" +
-                                                      $"\nCuenta: {accountOption1}" +
-                                                      $"\nCantidad: {addMoney}" +
-                                                      $"\nNuevo saldo: {bank.GetAccount(accountOption1).Balance}");
+                                string transaction = ($"\tIngreso de dinero" +
+                                                      $"\n\tCuenta: {accountOption1}" +
+                                                      $"\n\tCantidad: {addMoney}" +
+                                                      $"\n\tNuevo saldo: {bank.GetAccount(accountOption1).Balance}");
 
                                 AddTransaction(bank, transactionCounter, idUser, accountOption1, transaction);
                                 transactionCounter++;
@@ -129,10 +128,10 @@ namespace ATM2._0
                                                       $"\n|------------------------------|" +
                                                       $"\n\tNuevo saldo: {bank.GetAccount(accountOption2).Balance} ");
 
-                                    string transaction = ($"Retiro de dinero" +
-                                                          $"\nCuenta: {accountOption2}" +
-                                                          $"\nCantidad: {withdrawalMoney}" +
-                                                          $"\nNuevo saldo: {bank.GetAccount(accountOption2).Balance}");
+                                    string transaction = ($"\tRetiro de dinero" +
+                                                          $"\n\tCuenta: {accountOption2}" +
+                                                          $"\n\tCantidad: {withdrawalMoney}" +
+                                                          $"\n\tNuevo saldo: {bank.GetAccount(accountOption2).Balance}");
 
                                     AddTransaction(bank, transactionCounter, idUser, accountOption2, transaction);
                                     transactionCounter++;
@@ -179,9 +178,9 @@ namespace ATM2._0
                                                   $"\n\tAntigua contraseña: {actualPassword}" +
                                                   $"\n\tNueva contraseña: {newPassword}");
 
-                                string transaction = ($"Cambio de contraseña" +
-                                                      $"\nContraseña antigua: {actualPassword}" +
-                                                      $"\nContraseña nueva: {newPassword}");
+                                string transaction = ($"\tCambio de contraseña" +
+                                                      $"\n\tContraseña antigua: {actualPassword}" +
+                                                      $"\n\tContraseña nueva: {newPassword}");
 
                                 AddTransaction(bank, transactionCounter, idUser, transaction);
                                 transactionCounter++;
